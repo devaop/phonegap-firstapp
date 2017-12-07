@@ -39,17 +39,40 @@
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>Hello World</title>
+    <title>Weight Converter(lbs to kg)</title>
+    <script type="text/javascript">
+        
+        window.onload=function()
+        {
+            document.getElementById('btnConvert').addEventListener('click', convertWeight); 
+        }
+        function convertWeight(w)
+        {
+          var lbs = document.getElementById('pound').value;
+          var kg = lbs * 0.453592;
+          var result = "Weight in kilograms: "+kg+ "kgs";
+          document.getElementById('result').innerHTML= result;
+        }
+
+    </script>>
 </head>
 
 <body>
     <div class="app">
-        <h1>PhoneGap</h1>
+        <div class="container">
+        <h1>Weights Converter(lbs to kg)</h1>
+<label for="pound">Weight in pounds(lbs): </label>
+<input type="number" name="pound" id="pound" />
+<button id="btnConvert">Convert</button>
+<div id="result"></div>
+
+
         <div id="deviceready" class="blink">
             <p class="event listening">Connecting to Device</p>
-            <p class="event received">Device is Ready</p>
+            <p class="event received">Ready</p>
         </div>
     </div>
+</div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
